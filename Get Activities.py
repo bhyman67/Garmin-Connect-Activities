@@ -8,24 +8,24 @@ def convert_to_elapsed_time(seconds):
 
     return str(timedelta(seconds=seconds))
 
-# Replace with your Garmin credentials
+# Setup Garmin Connect client obj (login required)
 username, password = retrieve_creds('garmin connect/explore')
-
 client = gc.Garmin(username, password)
 client.login()
 
-activities = client.get_activities(0, 2000) 
+# Get all activities (up to 2000) and convert to a DataFrame
+activities = client.get_activities(0, 2000)
 activities_df = pd.DataFrame(activities)
+
+# Data Cleaning and Transformation/Formating
 activities_df['duration'] = activities_df['duration'].fillna(0).apply(convert_to_elapsed_time)
 activities_df['elapsedDuration'] = activities_df['elapsedDuration'].fillna(0).apply(convert_to_elapsed_time)
 activities_df['movingDuration'] = activities_df['movingDuration'].fillna(0).apply(convert_to_elapsed_time)
-
-# Transformations
 activities_df['activityType'] = activities_df['activityType'].apply(lambda x: x['typeKey'])
 activities_df['distance'] = activities_df['distance'].apply(lambda x: x * 0.000621371)
 activities_df['activityType'] = activities_df['activityType'].apply(lambda x: x.replace('_', ' ').title())
 
-# Dictionary to rename the columns
+# Column headers to rename and select
 renaming_dict = {
     'activityType': 'Activity Type',
     'activityName': 'Activity Name',
