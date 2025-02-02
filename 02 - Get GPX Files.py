@@ -45,7 +45,7 @@ for i in range(len(activities)):
 
     if activity_download_count == 0:
         break
-    elif activity_gpx_name in os.listdir("GPX Files"):
+    elif activity_gpx_name in os.listdir(os.path.join("..", "Garmin Activity GPX Data")):
         print(f"{activity_name} has already been downloaded. Skipping...")
         continue
 
@@ -55,7 +55,7 @@ for i in range(len(activities)):
     gpx = client.download_activity(activity_id, dl_fmt=Garmin.ActivityDownloadFormat.GPX)
 
     # Save the GPX file
-    with open(os.path.join("GPX Files", activity_gpx_name), "wb") as f:
+    with open(os.path.join("..", "Garmin Activity GPX Data", activity_gpx_name), "wb") as f:
         f.write(gpx)
     print(f"Downloaded {activity_name}.gpx")
 

@@ -120,8 +120,8 @@ renaming_dict = {
 }
 
 # Loop through all files in the "GPX Files" directory and extract the time it took to complete a 5k run
-run_5k_times = pd.read_json('Distance Times/5k_times.json', orient='records')
-run_5k_times.columns = ['activityId', '5k Time']
+run_5k_times = pd.read_json('Activity Metrics from GPX Data.json', orient='records')
+run_5k_times.columns = ['activityId', '5k Time', '10k Time', 'Total Distance']
 # join with the activities_df DataFrame on the 'activityId' column
 activities_df = activities_df.merge(run_5k_times, how='left', on='activityId')
 
@@ -134,4 +134,4 @@ activities_df.rename(columns=renaming_dict, inplace=True)
 # Save the data to a CSV file in the parent directory
 activities_df.to_csv('../Garmin 945 Activities.csv', index=False)
 
-print("Data has been saved to Garmin 945 Activities.csv.")
+input("Data has been saved to Garmin 945 Activities.csv.")
