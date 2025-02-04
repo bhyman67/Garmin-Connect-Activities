@@ -53,6 +53,13 @@ exercise_sets_df['volume'] = exercise_sets_df['volume'].apply(lambda x: math.cei
 activities_df = pd.concat([activities_df, exercise_sets_df], axis=1)
 activities_df.drop(columns=['First Exercise Set'], inplace=True)
 
+# Create a DataFrame with the dummy rows
+dummy_rows = pd.DataFrame([
+    {'activityType': 'Running', 'startTimeLocal': '2022-01-03T00:00:00.000Z', 'distance': 0},
+    {'activityType': 'Running', 'startTimeLocal': '2025-12-30T00:00:00.000Z', 'distance': 0}
+])
+activities_df = pd.concat([activities_df, dummy_rows], ignore_index=True)
+
 # Column headers to rename and select (STORE THIS IN A JSON FILE!!!)
 renaming_dict = {
     'activityType': 'Activity Type',
