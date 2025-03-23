@@ -25,15 +25,29 @@ Ensure you have the following installed before using the scripts:
    pip install -r requirements.txt
    ```
 
-## Usage
-1. Authenticate with Garmin Connect (if required)
-2. Run the script to fetch activities:
-   ```sh
-   python fetch_activities.py
-   ```
-3. Process and analyze data using available scripts:
-   ```sh
-   python analyze_data.py
-   ```
-4. Export results to csv to make it useable by Tableau.
+## Scripts / Usage
 
+### Script Descriptions
+1. Get Activities
+   - Authenticate with [Garmin Connect](https://pypi.org/project/garminconnect/)
+   - Fetch recent activities
+   - Save activities data to a pickle file
+   - Handle connection and authentication errors
+2. Get GPX Files
+3. Extract GPX Activity Metrics from GPX files
+4. Activity Prep, Transformation, and Enrichment
+
+### Usage
+
+There are two ways to run these scripts. Either all of them sequentially. Or only the first and then the last if you want to skip the GPX piece. 
+
+```mermaid
+graph TD
+    B[Run Script 01 - Get Activities]
+    B --> C[Run Script 04 - Activity Prep, Transformation, and Enrichment]
+    C
+
+    B --> D[Run Script 02 - Get GPX Files]
+    D --> F[Run Script 03 - Extract GPX Activity Metrics]
+    F --> C
+```
