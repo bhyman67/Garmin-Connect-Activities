@@ -1,0 +1,5 @@
+title: Garmin Connect Activities
+markdown: kramdown
+plugins:
+  - jekyll-seo-tag
+  - jekyll-mermaid
