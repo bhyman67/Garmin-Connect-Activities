@@ -69,7 +69,7 @@ PLATFORMS
   x64-mingw-ucrt
 
 DEPENDENCIES
-  jekyll (~> 4.3.0)
+  jekyll (~> 3.10.0)
   jekyll-mermaid
 
 BUNDLED WITH
