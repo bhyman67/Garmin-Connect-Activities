@@ -1,4 +1,6 @@
-# Garmin Connect Activities
+<h1>
+    <p align="center">Garmin Connect Activities</p>
+</h1>
 
 ## Overview
 This repository contains scripts to retrieve and analyze activity data from Garmin Connect. The goal is to provide a way to download, process, and visualize workout data for personal insights and tracking performance over time.
@@ -51,3 +53,5 @@ graph TD
     D --> F[Run Script 03 - Extract GPX Activity Metrics]
     F --> C
 ```
+
+<p align="right">Click <a href="https://github.com/bhyman67/Garmin-Connect-Activities">here</a> to view the code in this project's repository<p>
