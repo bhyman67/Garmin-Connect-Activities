@@ -43,7 +43,8 @@ Ensure you have the following installed before using the scripts:
 
 There are two ways to run these scripts. Either all of them sequentially. Or only the first and then the last if you want to skip the GPX piece. 
 
-```mermaid
+
+<div class="mermaid">
 graph TD
     B[Run Script 01 - Get Activities]
     B --> C[Run Script 04 - Activity Prep, Transformation, and Enrichment]
@@ -52,6 +53,6 @@ graph TD
     B --> D[Run Script 02 - Get GPX Files]
     D --> F[Run Script 03 - Extract GPX Activity Metrics]
     F --> C
-```
+</div>
 
 <p align="right">Click <a href="https://github.com/bhyman67/Garmin-Connect-Activities">here</a> to view the code in this project's repository<p>
