@@ -34,7 +34,7 @@ jobs:
 
     # Step 5: Deploy to GitHub Pages
     - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v4
+      uses: actions/deploy-pages@v4 # peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./_site             # Folder containing your Jekyll build output
