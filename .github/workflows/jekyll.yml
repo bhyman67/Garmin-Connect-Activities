@@ -37,4 +37,5 @@ jobs:
       uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        #publish_dir: ./_site
+        publish_dir: ./_site             # Folder containing your Jekyll build output
+        publish_branch: gh-pages         # Ensure it's deploying to `gh-pages` branch
