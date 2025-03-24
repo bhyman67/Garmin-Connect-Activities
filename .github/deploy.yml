@@ -21,27 +21,17 @@ jobs:
         ruby-version: 3.1 # Ruby 3.1 is compatible with Jekyll 4.4.1
         bundler-cache: true
 
-    # Step 3: Update Bundler
-    - name: Update Bundler
-      run: |
-        gem install bundler
-
-    # Step 4: Install dependencies
+    # Step 3: Install dependencies
     - name: Install dependencies
       run: |
         bundle install
 
-    # Step 5: Build the Jekyll site
+    # Step 4: Build the Jekyll site
     - name: Build the site
       run: |
         bundle exec jekyll build
 
-    # Step 6: Verify _site folder exists
-    - name: Check _site folder
-      run: |
-        if [ ! -d "_site" ]; then echo "Error: _site folder not found!"; exit 1; fi
-
-    # Step 7: Deploy to GitHub Pages
+    # Step 5: Deploy to GitHub Pages
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
