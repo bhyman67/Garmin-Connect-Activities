@@ -3,8 +3,13 @@ name: Deploy Jekyll Site to GitHub Pages
 on:
   push:
     branches:
-      - gh-pages  
+      - main   # ✅ Change this to `main` if `gh-pages` is your deployment branch
   workflow_dispatch:
+
+permissions:               # ✅ Required permissions for `actions/deploy-pages`
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
   build-deploy:
@@ -32,10 +37,61 @@ jobs:
       run: |
         JEKYLL_ENV=production bundle exec jekyll build
 
-    # Step 5: Deploy to GitHub Pages
-    - name: Deploy to GitHub Pages
-      uses: actions/deploy-pages@v4 # peaceiris/actions-gh-pages@v4
+    # Step 5: Verify the _site folder exists
+    - name: Verify _site folder
+      run: |
+        ls -la ./_site
+
+    # Step 6: Upload artifact (required by `actions/deploy-pages`)
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./_site             # Folder containing your Jekyll build output
-        publish_branch: gh-pages         # Ensure it's deploying to `gh-pages` branch
+        path: ./_site
+
+    # Step 7: Deploy to GitHub Pages
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
+
+
+# name: Deploy Jekyll Site to GitHub Pages
+
+# on:
+#   push:
+#     branches:
+#       - gh-pages  
+#   workflow_dispatch:
+
+# jobs:
+#   build-deploy:
+#     runs-on: ubuntu-latest
+
+#     steps:
+#     # Step 1: Checkout the repository
+#     - name: Checkout code
+#       uses: actions/checkout@v4
+
+#     # Step 2: Set up Ruby
+#     - name: Set up Ruby
+#       uses: ruby/setup-ruby@v1
+#       with:
+#         ruby-version: 3.1  # Ruby 3.1 is compatible with Jekyll 4.4.1
+#         bundler-cache: true
+
+#     # Step 3: Install dependencies
+#     - name: Install dependencies
+#       run: |
+#         bundle install
+
+#     # Step 4: Build the Jekyll site in production mode
+#     - name: Build the site
+#       run: |
+#         JEKYLL_ENV=production bundle exec jekyll build
+
+#     # Step 5: Deploy to GitHub Pages
+#     - name: Deploy to GitHub Pages
+#       uses: actions/deploy-pages@v4 # peaceiris/actions-gh-pages@v4
+#       with:
+#         github_token: ${{ secrets.GITHUB_TOKEN }}
+#         publish_dir: ./_site             # Folder containing your Jekyll build output
+#         publish_branch: gh-pages         # Ensure it's deploying to `gh-pages` branch
