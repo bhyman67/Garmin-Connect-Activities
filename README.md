@@ -54,4 +54,6 @@ graph TD
     F --> C
 ```
 
+![Build Status](https://github.com/YOUR_USERNAME/YOUR_REPO/actions/workflows/jekyll.yml/badge.svg)
+
 <p align="right">Click <a href="https://github.com/bhyman67/Garmin-Connect-Activities">here</a> to view the code in this project's repository<p>

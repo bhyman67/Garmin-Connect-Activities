@@ -1,2 +1,5 @@
 plugins:
   - jekyll-mermaid
+
+mermaid:
+  startOnLoad: true

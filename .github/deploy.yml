@@ -1,9 +1,9 @@
-name: Deploy Jekyll Site to GitHub Pages
+name: Build and Deploy Jekyll Site on GitHub Pages
 
 on:
   push:
     branches:
-      - main # Replace 'main' with your default branch name if different
+      - main  # Replace 'main' with your default branch name if different
 
 jobs:
   build-deploy:
@@ -12,13 +12,13 @@ jobs:
     steps:
     # Step 1: Checkout the repository
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     # Step 2: Set up Ruby
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 3.1 # Ruby 3.1 is compatible with Jekyll 4.4.1
+        ruby-version: 3.1  # Ruby 3.1 is compatible with Jekyll 4.4.1
         bundler-cache: true
 
     # Step 3: Install dependencies
@@ -26,14 +26,14 @@ jobs:
       run: |
         bundle install
 
-    # Step 4: Build the Jekyll site
+    # Step 4: Build the Jekyll site in production mode
     - name: Build the site
       run: |
-        bundle exec jekyll build
+        JEKYLL_ENV=production bundle exec jekyll build
 
     # Step 5: Deploy to GitHub Pages
     - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
+      uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./_site
