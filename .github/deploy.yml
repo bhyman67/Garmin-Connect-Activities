@@ -18,7 +18,7 @@ jobs:
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 3.1 # Use a Ruby version compatible with Jekyll 3.x
+        ruby-version: 3.1 # Ruby 3.1 is compatible with Jekyll 4.4.1
         bundler-cache: true
 
     # Step 3: Update Bundler
