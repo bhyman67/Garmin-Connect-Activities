@@ -18,7 +18,7 @@ jobs:
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 2.7 # Use a Ruby version compatible with Jekyll 3.x
+        ruby-version: 3.1 # Use a Ruby version compatible with Jekyll 3.x
         bundler-cache: true
 
     # Step 3: Update Bundler
@@ -36,7 +36,12 @@ jobs:
       run: |
         bundle exec jekyll build
 
-    # Step 6: Deploy to GitHub Pages
+    # Step 6: Verify _site folder exists
+    - name: Check _site folder
+      run: |
+        if [ ! -d "_site" ]; then echo "Error: _site folder not found!"; exit 1; fi
+
+    # Step 7: Deploy to GitHub Pages
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
