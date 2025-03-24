@@ -18,20 +18,25 @@ jobs:
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
-        ruby-version: 3.1 # Use a Ruby version compatible with Jekyll
+        ruby-version: 2.7 # Use a Ruby version compatible with Jekyll 3.x
         bundler-cache: true
 
-    # Step 3: Install dependencies
+    # Step 3: Update Bundler
+    - name: Update Bundler
+      run: |
+        gem install bundler
+
+    # Step 4: Install dependencies
     - name: Install dependencies
       run: |
         bundle install
 
-    # Step 4: Build the Jekyll site
+    # Step 5: Build the Jekyll site
     - name: Build the site
       run: |
         bundle exec jekyll build
 
-    # Step 5: Deploy to GitHub Pages
+    # Step 6: Deploy to GitHub Pages
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
