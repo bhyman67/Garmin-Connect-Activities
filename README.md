@@ -17,6 +17,7 @@ Ensure you have the following installed before using the scripts:
 - Required Python packages (listed in `requirements.txt`)
 
 ## Installation
+
 1. Clone the repository:
    ```sh
    git clone https://github.com/bhyman67/Garmin-Connect-Activities.git
