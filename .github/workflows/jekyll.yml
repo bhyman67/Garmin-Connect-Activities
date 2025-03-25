@@ -3,7 +3,7 @@ name: Deploy Jekyll Site to GitHub Pages
 on:
   push:
     branches:
-      - main     # Change this to 'main' if `gh-pages` is your deployment branch
+      - main
   workflow_dispatch:
 
 permissions:
@@ -14,6 +14,9 @@ permissions:
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
+    environment:  # ✅ Moved here (at the job level)
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
     - name: Checkout code
@@ -45,6 +48,3 @@ jobs:
     - name: Deploy to GitHub Pages
       id: deployment
       uses: actions/deploy-pages@v4
-      environment:
-        name: github-pages
-        url: ${{ steps.deployment.outputs.page_url }}
