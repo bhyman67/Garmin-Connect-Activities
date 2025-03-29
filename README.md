@@ -44,17 +44,8 @@ Ensure you have the following installed before using the scripts:
 
 There are two ways to run these scripts. Either all of them sequentially. Or only the first and then the last if you want to skip the GPX piece. 
 
-```mermaid
-graph TD
-    B[Run Script 01 - Get Activities]
-    B --> C[Run Script 04 - Activity Prep, Transformation, and Enrichment]
-    C
-
-    B --> D[Run Script 02 - Get GPX Files]
-    D --> F[Run Script 03 - Extract GPX Activity Metrics]
-    F --> C
-```
-
-![Build Status](https://github.com/YOUR_USERNAME/YOUR_REPO/actions/workflows/jekyll.yml/badge.svg)
+<div align="center">
+    <img src="Flow%20of%20Scripts.png" alt="Flow of Scripts">
+</div>
 
 <p align="right">Click <a href="https://github.com/bhyman67/Garmin-Connect-Activities">here</a> to view the code in this project's repository<p>

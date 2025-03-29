@@ -7,3 +7,5 @@ _config.yml
 .nojekyll
 index.md
 Gemfile
+
+Generate Graph.md
