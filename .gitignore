@@ -1,3 +1,9 @@
 *.gpx
 *.pkl
 *.json
+
+.github/workflows/jekyll.yml
+_config.yml
+.nojekyll
+index.md
+Gemfile
