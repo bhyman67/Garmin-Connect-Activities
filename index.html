@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/mermaid@11.5.0/dist/mermaid.min.js"></script>
+    <script>
+      mermaid.initialize({ startOnLoad: true });
+    </script> -->
+
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Home | Garmin Connect Activities</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Home" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Garmin Connect Activities" />
+<meta property="og:description" content="Garmin Connect Activities" />
+<link rel="canonical" href="https://bhyman67.github.io/Garmin-Connect-Activities/" />
+<meta property="og:url" content="https://bhyman67.github.io/Garmin-Connect-Activities/" />
+<meta property="og:site_name" content="Garmin Connect Activities" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Home" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","description":"Garmin Connect Activities","headline":"Home","name":"Garmin Connect Activities","url":"https://bhyman67.github.io/Garmin-Connect-Activities/"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+    <link
+      rel="stylesheet"
+      href="/Garmin-Connect-Activities/assets/css/style.css?v="
+    >
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      
+      <h1><a href="https://bhyman67.github.io/Garmin-Connect-Activities/">Garmin Connect Activities</a></h1>
+      
+
+      
+<h1>
+    <p align="center">Garmin Connect Activities</p>
+</h1>
+
+<h2 id="overview">Overview</h2>
+<p>This repository contains scripts to retrieve and analyze activity data from Garmin Connect. The goal is to provide a way to download, process, and visualize workout data for personal insights and tracking performance over time.</p>
+
+<h2 id="features">Features</h2>
+<ul>
+  <li>Fetch activity data from Garmin Connect</li>
+  <li>Process and analyze fitness data</li>
+  <li>Export data in user-friendly formats</li>
+  <li>Generate summary statistics and visualizations</li>
+</ul>
+
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Ensure you have the following installed before using the scripts:</p>
+<ul>
+  <li>Python 3.x</li>
+  <li>Required Python packages (listed in <code class="language-plaintext highlighter-rouge">requirements.txt</code>)</li>
+</ul>
+
+<h2 id="installation">Installation</h2>
+
+<ol>
+  <li>Clone the repository:
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/bhyman67/Garmin-Connect-Activities.git
+<span class="nb">cd </span>Garmin-Connect-Activities
+</code></pre></div>    </div>
+  </li>
+  <li>Install dependencies:
+    <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install</span> <span class="nt">-r</span> requirements.txt
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="scripts--usage">Scripts / Usage</h2>
+
+<h3 id="script-descriptions">Script Descriptions</h3>
+<ol>
+  <li>Get Activities
+    <ul>
+      <li>Authenticate with <a href="https://pypi.org/project/garminconnect/">Garmin Connect</a></li>
+      <li>Fetch recent activities</li>
+      <li>Save activities data to a pickle file</li>
+      <li>Handle connection and authentication errors</li>
+    </ul>
+  </li>
+  <li>Get GPX Files</li>
+  <li>Extract GPX Activity Metrics from GPX files</li>
+  <li>Activity Prep, Transformation, and Enrichment</li>
+</ol>
+
+<h3 id="usage">Usage</h3>
+
+<p>There are two ways to run these scripts. Either all of them sequentially. Or only the first and then the last if you want to skip the GPX piece.</p>
+
+<pre><code class="language-mermaid">graph TD
+    B[Run Script 01 - Get Activities]
+    B --&gt; C[Run Script 04 - Activity Prep, Transformation, and Enrichment]
+    C
+
+    B --&gt; D[Run Script 02 - Get GPX Files]
+    D --&gt; F[Run Script 03 - Extract GPX Activity Metrics]
+    F --&gt; C
+</code></pre>
+
+<p><img src="https://github.com/YOUR_USERNAME/YOUR_REPO/actions/workflows/jekyll.yml/badge.svg" alt="Build Status" /></p>
+
+<p align="right">Click <a href="https://github.com/bhyman67/Garmin-Connect-Activities">here</a> to view the code in this project's repository<p>
+</p></p>
+
+
+      
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js"
+      integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg="
+      crossorigin="anonymous"
+    ></script>
+    <script>anchors.add();</script>
+
+    
+  </body>
+</html>
