@@ -7,5 +7,7 @@ plugins:
   - jekyll-mermaid
   - jekyll-seo-tag
 
+theme: minima
+
 mermaid:
   startOnLoad: true
