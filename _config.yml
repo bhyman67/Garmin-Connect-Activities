@@ -5,8 +5,13 @@ url: https://bhyman67.github.io
 
 plugins:
   - jekyll-mermaid
-  - jekyll-seo-tag
   - github-pages
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-gist
+  - jekyll-include-cache
 
 theme: minima
 
