@@ -1,5 +1,7 @@
-baseurl: "/Garmin-Connect-Activities"        # Include repo name for project pages
-url: "https://bhyman67.github.io"
+title: Garmin Connect Activities
+description: Garmin Connect Activities
+baseurl: /Garmin-Connect-Activities        # Include repo name for project pages
+url: https://bhyman67.github.io
 
 plugins:
   - jekyll-mermaid
