@@ -5,6 +5,7 @@ url: https://bhyman67.github.io
 
 plugins:
   - jekyll-mermaid
+  - jekyll-seo-tag
 
 mermaid:
   startOnLoad: true
