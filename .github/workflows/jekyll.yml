@@ -32,7 +32,7 @@ jobs:
       run: bundle install
 
     - name: Build the Jekyll site in production mode
-      run: JEKYLL_ENV=production bundle exec jekyll build
+      run: bundle exec jekyll build #JEKYLL_ENV=production bundle exec jekyll build
 
     # - name: Add .nojekyll file
     #   run: touch ./_site/.nojekyll
