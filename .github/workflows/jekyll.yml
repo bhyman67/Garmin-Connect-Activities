@@ -34,8 +34,8 @@ jobs:
     - name: Build the Jekyll site in production mode
       run: JEKYLL_ENV=production bundle exec jekyll build
 
-    - name: Add .nojekyll file
-      run: touch ./_site/.nojekyll
+    # - name: Add .nojekyll file
+    #   run: touch ./_site/.nojekyll
 
     - name: Verify _site folder
       run: ls -la ./_site
