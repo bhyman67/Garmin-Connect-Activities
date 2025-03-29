@@ -15,7 +15,7 @@ jobs:
   build-deploy:
     runs-on: ubuntu-latest
     environment:  # ✅ Moved here (at the job level)
-      name: github-pages
+      name: main # github-pages
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
