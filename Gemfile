@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 # Jekyll Core
-gem "jekyll", "~> 4.4.1"
+gem "jekyll", "~> 3.10.0" 
 
 # Plugins
 gem "jekyll-mermaid", "~> 1.0.0"        # Mermaid.js diagrams support
