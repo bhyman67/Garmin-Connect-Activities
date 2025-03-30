@@ -31,14 +31,14 @@ Ensure you have the following installed before using the scripts:
 ## Scripts / Usage
 
 ### Script Descriptions
-1. Get Activities
+1. [Get Activities](01%20-%20Get%20Activities.py)
    - Authenticate with [Garmin Connect](https://pypi.org/project/garminconnect/)
    - Fetch recent activities
    - Save activities data to a pickle file
    - Handle connection and authentication errors
-2. Get GPX Files
-3. Extract GPX Activity Metrics from GPX files
-4. Activity Prep, Transformation, and Enrichment
+2. [Get GPX Files](02%20-%20Get%20GPX%20Files.py)
+3. [Extract GPX Activity Metrics from GPX Files](03%20-%20Extract%20GPX%20Activity%20Metrics.py)
+4. [Activity Prep, Transformation, and Enrichment](04%20-%20Activity%20Prep,%20Transformation,%20and%20Enrichment.py)
 
 ### Usage
 
