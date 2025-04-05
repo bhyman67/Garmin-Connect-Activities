@@ -3,7 +3,10 @@
 </h1>
 
 ## Overview
-This repository contains scripts to retrieve and analyze activity data from Garmin Connect. The goal is to provide a way to download, process, and visualize workout data for personal insights and tracking performance over time.
+This repository contains scripts to retrieve and process activity data from Garmin Connect so that it can be explored and analyzed in Excel and visualized in Tableau: 
+
+* [Tableau Dashboard](https://public.tableau.com/app/profile/brent1746/viz/RunningandResistanceTrainingTracker/Overview) ([Activity Data](https://1drv.ms/x/c/532f03b812e559b6/EQnySg4u6AVCoOtcMKw7TekB8vOiY29yLaXJxuEDQeI2Yw))
+
 
 ## Features
 - Fetch activity data from Garmin Connect
