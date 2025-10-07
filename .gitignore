@@ -1,11 +1,17 @@
+# Ignore these file types
 *.gpx
 *.pkl
 *.json
 
+# Ignore these specific files, they are needed for the GitHub Pages site to function properly
 .github/workflows/jekyll.yml
 _config.yml
 .nojekyll
 index.md
 Gemfile
 
+# Needed this to generate the graph and and snip the visualization
 Generate Graph.md
+
+# Ignore Exploration and Experimentation folder
+Exploration and Experimentation/

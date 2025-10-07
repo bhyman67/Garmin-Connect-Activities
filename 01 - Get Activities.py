@@ -10,7 +10,6 @@ from garminconnect import (
 
 # Setup Garmin Connect client object with credentials
 username, password = retrieve_creds('garmin connect/explore')
-client = Garmin(username, password)
 
 # Attempt to login
 try:
