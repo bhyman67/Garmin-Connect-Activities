@@ -3,11 +3,6 @@
 *.pkl
 *.json
 
-# Ignore these specific files, they are needed for the GitHub Pages site to function properly
-.github/workflows/jekyll.yml
-_config.yml
-Gemfile
-
 # Ignore these folders
 Test/
 Exploration and Experimentation/
